@@ -1,4 +1,4 @@
-﻿namespace InfinityAmmo
+﻿namespace FFEndRound
 {
     using PluginAPI.Core;
     using PluginAPI.Core.Attributes;
@@ -6,13 +6,13 @@
     public class EventHandlers
     {
         [PluginEvent(ServerEventType.RoundEnd)]
-        public void OnRoundEnded(RoundSummary.LeadingTeam leadingTeam)
+        void OnRoundEnded(RoundSummary.LeadingTeam leadingTeam)
         {
-            Server.SendBroadcast(FFEndRound.FFEndRound.Instance.Config.Broadcast, 30);
+            Server.SendBroadcast(FFEndRound.Instance.Config.Broadcast, FFEndRound.Instance.Config.BroadcastTime);
             Server.FriendlyFire = true;
         }
-        [PluginEvent(ServerEventType.RoundStart)]
-        public void OnRoundStart()
+        [PluginEvent(ServerEventType.RoundRestart)]
+        public void OnRestart()
         {
             Server.FriendlyFire = false;
         }
