@@ -8,7 +8,7 @@ namespace FFEndRound
     public class FFEndRound
     {
         public const string Name = "FFEndRound";
-        public const string Version = "v1.0.2";
+        public const string Version = "v1.0.3 - Beta";
         public const string Author = "Rysik5318";
         public static FFEndRound Instance { get; private set; }
         [PluginConfig("config.yml")]
